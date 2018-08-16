@@ -233,5 +233,11 @@ playground.xcworkspace
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+
 
 # End of https://www.gitignore.io/api/ruby,xcode,macos,swift,carthage,cocoapods,objective-c
