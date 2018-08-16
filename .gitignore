@@ -237,7 +237,7 @@ playground.xcworkspace
 .idea
 **/node_modules/*
 **/.firebaserc
-
+GoogleService-Info.plist
 
 
 # End of https://www.gitignore.io/api/ruby,xcode,macos,swift,carthage,cocoapods,objective-c
