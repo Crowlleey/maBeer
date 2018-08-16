@@ -14,6 +14,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("OPA")
+        
+        let comm = Authentication()
+        
+//        comm.createUser(with: "georgegomees@gmail.com", "123123") { (res, err) in
+//            print(res)
+//            print(err)
+//        }
+//        
+        comm.login(with: "georgegomees@gmail.com", "123123") { (res, err) in
+            print(res)
+            print(err)
+        }
+        
+  
+        
     }
 
     override func didReceiveMemoryWarning() {
