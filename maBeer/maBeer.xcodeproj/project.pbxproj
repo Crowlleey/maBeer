@@ -15,6 +15,7 @@
 		5EC362D42125BC14008BECF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC362D22125BC14008BECF8 /* LaunchScreen.storyboard */; };
 		5EC362DF2125BC14008BECF8 /* maBeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC362DE2125BC14008BECF8 /* maBeerTests.swift */; };
 		5EC362EA2125BC14008BECF8 /* maBeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC362E92125BC14008BECF8 /* maBeerUITests.swift */; };
+		5EC362F82125C8AE008BECF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EC362F72125C8AE008BECF8 /* GoogleService-Info.plist */; };
 		7824F4FE49B0FCE51BF2FA09 /* Pods_maBeer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1719E917CBE2DAC31677EE5 /* Pods_maBeer.framework */; };
 		F96BD9A61DB7E37132B6F194 /* Pods_maBeerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450F433B771CAF6EFB94A37 /* Pods_maBeerUITests.framework */; };
 		F98C6A76952E93959959B66E /* Pods_maBeerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9273C1D72CA0313436FAB756 /* Pods_maBeerTests.framework */; };
@@ -55,6 +56,7 @@
 		5EC362E52125BC14008BECF8 /* maBeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maBeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC362E92125BC14008BECF8 /* maBeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maBeerUITests.swift; sourceTree = "<group>"; };
 		5EC362EB2125BC14008BECF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EC362F72125C8AE008BECF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72B61EA1B3904DDB24929055 /* Pods-maBeer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maBeer.release.xcconfig"; path = "Pods/Target Support Files/Pods-maBeer/Pods-maBeer.release.xcconfig"; sourceTree = "<group>"; };
 		7347EA58DCA7810677F925B6 /* Pods-maBeerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maBeerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-maBeerTests/Pods-maBeerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8450F433B771CAF6EFB94A37 /* Pods_maBeerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maBeerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				5EC362D02125BC14008BECF8 /* Assets.xcassets */,
 				5EC362D22125BC14008BECF8 /* LaunchScreen.storyboard */,
 				5EC362D52125BC14008BECF8 /* Info.plist */,
+				5EC362F72125C8AE008BECF8 /* GoogleService-Info.plist */,
 				5EC362CD2125BC13008BECF8 /* maBeer.xcdatamodeld */,
 			);
 			path = maBeer;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC362D42125BC14008BECF8 /* LaunchScreen.storyboard in Resources */,
+				5EC362F82125C8AE008BECF8 /* GoogleService-Info.plist in Resources */,
 				5EC362D12125BC14008BECF8 /* Assets.xcassets in Resources */,
 				5EC362CC2125BC13008BECF8 /* Main.storyboard in Resources */,
 			);
