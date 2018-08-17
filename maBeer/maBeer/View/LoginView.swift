@@ -19,10 +19,6 @@ class LoginView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // DE que maneira desenvolver uma aplicação que auxilie uma equipe de scrum
-        // a gerenciar suas tarefas por meio de um dispositivo movel a fim de
-        // aumentar a produtividade de trabalho.
-        
         self.tfEmail = UITextField(frame: CGRect(x: 10, y: 10, width: 10, height: 10))
     }
     
