@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import PureLayout
 
 class LoginView: UIView{
     
     var shouldSetupConstraints = true
+    
+    let screenSize = UIScreen.main.bounds
     
     var tfEmail: UITextField!
     var tfSenha: UITextField!
@@ -18,8 +21,21 @@ class LoginView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .white
         
-        self.tfEmail = UITextField(frame: CGRect(x: 10, y: 10, width: 10, height: 10))
+        self.tfEmail = UITextField(frame: CGRect.zero)
+        self.tfEmail.backgroundColor = UIColor.gray
+        self.tfEmail.layer.borderColor = UIColor.blue.cgColor
+        self.tfEmail.layer.borderWidth = 1.0
+        self.tfEmail.layer.cornerRadius = 5.0
+        self.tfEmail.isEnabled = true
+        
+      
+        self.tfEmail.autoSetDimension(.height, toSize: 34.0)
+        self.tfEmail.keyboardAppearance = .dark
+        self.tfEmail.isUserInteractionEnabled = true
+
+        self.addSubview(self.tfEmail)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,9 +45,14 @@ class LoginView: UIView{
     override func updateConstraints() {
         if(shouldSetupConstraints) {
             // AutoLayout constraints
+            
+            let edgesInset: CGFloat = 10.0
+            self.tfEmail.autoPinEdge(toSuperviewEdge: .bottom, withInset: edgesInset)
+            self.tfEmail.autoPinEdge(toSuperviewEdge: .left, withInset: edgesInset)
+            self.tfEmail.autoPinEdge(toSuperviewEdge: .right, withInset: edgesInset)
+            
             shouldSetupConstraints = false
         }
         super.updateConstraints()
     }
-    // POD INSTALL
 }

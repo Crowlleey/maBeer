@@ -6,4 +6,28 @@
 //  Copyright © 2018 CrowCode. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class LoginViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var loginView: LoginView!
+        
+        loginView = LoginView()
+        view.addSubview(loginView)
+        loginView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
+        
+        
+        let comm = Authentication()
+     
+        comm.login(with: "georgegomees@gmail.com", "123123") { (res, err) in
+            print(res!)
+            print(err!)
+        }
+    }
+    
+    
+    
+}
