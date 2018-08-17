@@ -11,6 +11,9 @@ target 'maBeer' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
+	pod 'PureLayout'
+	pod 'RxSwift',    '~> 4.0'
+    	pod 'RxCocoa',    '~> 4.0'
 
   target 'maBeerTests' do
     inherit! :search_paths
