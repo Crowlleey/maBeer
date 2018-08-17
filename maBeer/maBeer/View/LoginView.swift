@@ -11,48 +11,81 @@ import PureLayout
 
 class LoginView: UIView{
     
+    var signInAction: (() -> Void)?
+    
     var shouldSetupConstraints = true
     
     let screenSize = UIScreen.main.bounds
-    
-    var tfEmail: UITextField!
-    var tfSenha: UITextField!
+
     var btLogin: UIButton!
+    
+    let tfEmail: UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = .clear
+        tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 5.0
+        tf.autocorrectionType = .no
+        tf.placeholder = "E-Mail"
+        tf.textAlignment = .center
+        tf.autoSetDimension(.height, toSize: 34.0)
+        tf.keyboardAppearance = .dark
+        return tf
+    }()
+    
+    let tfSenha: UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = .clear
+        tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 5.0
+        tf.isSecureTextEntry = true
+        tf.autocorrectionType = .no
+        tf.placeholder = "Senha"
+        tf.textAlignment = .center
+        tf.autoSetDimension(.height, toSize: 34.0)
+        tf.keyboardAppearance = .dark
+        return tf
+    }()
+
+    let btSignIn: UIButton = {
+        let bt = UIButton()
+        
+        return bt
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        
-        self.tfEmail = UITextField(frame: CGRect.zero)
-        self.tfEmail.backgroundColor = UIColor.gray
-        self.tfEmail.layer.borderColor = UIColor.blue.cgColor
-        self.tfEmail.layer.borderWidth = 1.0
-        self.tfEmail.layer.cornerRadius = 5.0
-        self.tfEmail.isEnabled = true
-        
-      
-        self.tfEmail.autoSetDimension(.height, toSize: 34.0)
-        self.tfEmail.keyboardAppearance = .dark
-        self.tfEmail.isUserInteractionEnabled = true
-
-        self.addSubview(self.tfEmail)
+        addSubview(tfEmail)
+        addSubview(tfSenha)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented")}
     
     override func updateConstraints() {
         if(shouldSetupConstraints) {
             // AutoLayout constraints
             
-            let edgesInset: CGFloat = 10.0
-            self.tfEmail.autoPinEdge(toSuperviewEdge: .bottom, withInset: edgesInset)
-            self.tfEmail.autoPinEdge(toSuperviewEdge: .left, withInset: edgesInset)
-            self.tfEmail.autoPinEdge(toSuperviewEdge: .right, withInset: edgesInset)
+            setupTextFields()
             
+         
             shouldSetupConstraints = false
         }
         super.updateConstraints()
     }
+    
+    func setupTextFields(){
+        let edgesInset: CGFloat = 10.0
+        let topInset: CGFloat = 200.0
+        
+        tfEmail.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        tfEmail.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        tfEmail.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        tfEmail.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+
+        tfSenha.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        tfSenha.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        tfSenha.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        tfSenha.topAnchor.constraint(equalTo: tfEmail.bottomAnchor, constant: 20).isActive = true
+    }
+    
 }
