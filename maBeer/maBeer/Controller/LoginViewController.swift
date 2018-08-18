@@ -15,10 +15,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController.na
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         loginView = LoginView()
+        loginView.loginAction = pressedLogin
         view.addSubview(loginView)
         loginView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
         
@@ -30,9 +30,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func pressLogin(){
-        
+    func pressedLogin(){
+        print("CRICO")
     }
-    
-    
 }

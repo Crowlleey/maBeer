@@ -11,8 +11,7 @@ import PureLayout
 
 class LoginView: UIView{
     
-    var signInAction: (() -> Void)?
-    
+    var loginAction: (() -> Void)?
     
     var shouldSetupConstraints = true
     
@@ -132,5 +131,12 @@ class LoginView: UIView{
         let widthConstraint = btLogin.widthAnchor.constraint(equalToConstant: 370)
         widthConstraint.priority = UILayoutPriority.defaultHigh
         widthConstraint.isActive = true
+        
+        btLogin.addTarget(self, action: #selector(pressLogin), for: .touchUpInside)
     }
+    
+    @objc func pressLogin(){
+        loginAction?()
+    }
+    
 }
