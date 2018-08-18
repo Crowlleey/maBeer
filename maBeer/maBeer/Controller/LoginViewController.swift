@@ -10,24 +10,27 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var loginView: LoginView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var loginView: LoginView!
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         loginView = LoginView()
+        loginView.loginAction = pressedLogin
         view.addSubview(loginView)
         loginView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
-        
         
         let comm = Authentication()
      
         comm.login(with: "georgegomees@gmail.com", "123123") { (res, err) in
             print(res!)
-            print(err!)
+            print(err ?? "NO ERRROR")
         }
     }
     
-    
-    
+    func pressedLogin(){
+        print("CRICO")
+    }
 }
