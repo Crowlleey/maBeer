@@ -45,6 +45,6 @@ class LoginViewController: UIViewController {
     }
     
     func pressedLogin(){
-        print("CRICO")
+
     }
 }
