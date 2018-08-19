@@ -79,9 +79,17 @@ class LoginView: UIView{
         super.updateConstraints()
     }
     
+    func setPasswordBorderColor(_ condition: Bool){
+        if condition {
+            self.tfPassword.layer.borderColor = UIColor.green.cgColor
+        }else{
+            self.tfPassword.layer.borderColor = UIColor.red.cgColor
+        }
+    }
+    
 // MARK: - Setup constraints
     
-    func setupTextFields(){
+   private func setupTextFields(){
     
         tfEmail.translatesAutoresizingMaskIntoConstraints = false
         
@@ -118,7 +126,7 @@ class LoginView: UIView{
         tfPassword.heightAnchor.constraint(equalToConstant: 34).isActive = true
     }
     
-    func setupButtons(){
+   private func setupButtons(){
         btLogin.translatesAutoresizingMaskIntoConstraints = false
         btLogin.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         btLogin.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true

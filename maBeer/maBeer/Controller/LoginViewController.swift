@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
     var loginView: LoginView!
+    let loginViewModel = LoginViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +26,17 @@ class LoginViewController: UIViewController {
         view.addSubview(loginView)
         loginView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
         
-        let comm = Authentication()
-     
-        comm.login(with: "georgegomees@gmail.com", "123123") { (res, err) in
-            print(res!)
-            print(err ?? "NO ERRROR")
-        }
+        setUpValidations()
+    }
+    
+    func setUpValidations(){
+        _ = loginView.tfPassword.rx.text.map{ $0 ?? ""}.bind(to: loginViewModel.password)
+        _ = loginViewModel.isValidPassword.bind(to: loginView.btLogin.rx.isEnabled)
+        
+        loginViewModel.isValidPassword.subscribe(onNext: {[unowned self]isValid in
+            print("é ou nao: ", isValid)
+            self.loginView.setPasswordBorderColor(isValid)
+        }).disposed(by: disposeBag)
     }
     
     func pressedLogin(){
