@@ -31,10 +31,15 @@ class LoginViewController: UIViewController {
     
     func setUpValidations(){
         _ = loginView.tfPassword.rx.text.map{ $0 ?? ""}.bind(to: loginViewModel.password)
+        _ = loginView.tfEmail.rx.text.map{$0 ?? ""}.bind(to: loginViewModel.emailText)
+        
         _ = loginViewModel.isValidPassword.bind(to: loginView.btLogin.rx.isEnabled)
         
+        loginViewModel.isValidEmail.subscribe(onNext: {[unowned self] isValid in
+            self.loginView.setEmailBorderColor(isValid)
+        }).disposed(by: disposeBag)
+        
         loginViewModel.isValidPassword.subscribe(onNext: {[unowned self]isValid in
-            print("é ou nao: ", isValid)
             self.loginView.setPasswordBorderColor(isValid)
         }).disposed(by: disposeBag)
     }

@@ -22,6 +22,7 @@ class LoginView: UIView{
         tf.backgroundColor = .clear
         tf.layer.borderWidth = 1.0
         tf.layer.cornerRadius = 5.0
+        tf.layer.borderColor = UIColor.black.cgColor
         tf.autocorrectionType = .no
         tf.placeholder = "E-Mail"
         tf.textAlignment = .center
@@ -35,6 +36,7 @@ class LoginView: UIView{
         tf.backgroundColor = .clear
         tf.layer.borderWidth = 1.0
         tf.layer.cornerRadius = 5.0
+        tf.layer.borderColor = UIColor.black.cgColor
         tf.isSecureTextEntry = true
         tf.autocorrectionType = .no
         tf.placeholder = "Senha"
@@ -79,11 +81,19 @@ class LoginView: UIView{
         super.updateConstraints()
     }
     
+    func setEmailBorderColor(_ condition: Bool){
+        if condition {
+            self.tfEmail.layer.borderColor = UIColor.green.cgColor
+        }else{
+            self.tfEmail.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
     func setPasswordBorderColor(_ condition: Bool){
         if condition {
             self.tfPassword.layer.borderColor = UIColor.green.cgColor
         }else{
-            self.tfPassword.layer.borderColor = UIColor.red.cgColor
+            self.tfPassword.layer.borderColor = UIColor.black.cgColor
         }
     }
     
@@ -142,6 +152,8 @@ class LoginView: UIView{
         
         btLogin.addTarget(self, action: #selector(pressLogin), for: .touchUpInside)
     }
+    
+    //MARK: - Actions
     
     @objc func pressLogin(){
         loginAction?()
