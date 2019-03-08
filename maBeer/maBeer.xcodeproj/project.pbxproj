@@ -178,7 +178,6 @@
 		5EC362F92125C916008BECF8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5E979BC92233069200363D5E /* GoogleService-Info.plist */,
 				5E6E81FE2125DA6900F3D7E1 /* Authentication.swift */,
 				5EC362FA2125C92E008BECF8 /* FirebaseCommunication.swift */,
 			);
@@ -204,6 +203,7 @@
 		5EF838E621264630009D173B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5E979BC92233069200363D5E /* GoogleService-Info.plist */,
 				5EF838E5212645FB009D173B /* Com */,
 				5EC362D22125BC14008BECF8 /* LaunchScreen.storyboard */,
 				5EC362D52125BC14008BECF8 /* Info.plist */,
@@ -253,6 +253,7 @@
 			buildConfigurationList = 5EC362EE2125BC14008BECF8 /* Build configuration list for PBXNativeTarget "maBeer" */;
 			buildPhases = (
 				494D8996B8C4EE50EE8C2BC7 /* [CP] Check Pods Manifest.lock */,
+				5E979BCD22330C1E00363D5E /* RSwift */,
 				5EC362BF2125BC13008BECF8 /* Sources */,
 				5EC362C02125BC13008BECF8 /* Frameworks */,
 				5EC362C12125BC13008BECF8 /* Resources */,
@@ -395,6 +396,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5E979BCD22330C1E00363D5E /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n\n";
+		};
 		9E0FE7F9BF74FEC3F229F597 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,6 +462,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -451,6 +473,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",

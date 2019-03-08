@@ -42,6 +42,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PureLayout (3.0.2)
+  - R.swift (5.0.2):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
@@ -52,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - PureLayout
+  - R.swift
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
 
@@ -69,6 +73,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PureLayout
+    - R.swift
+    - R.swift.Library
     - RxCocoa
     - RxSwift
 
@@ -85,9 +91,11 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: 23ab172ed2efb17355399ffdc2e02937fff8f27c
+PODFILE CHECKSUM: 26164212d6dbebb62d63ecf0c98a8477435b8d41
 
 COCOAPODS: 1.5.3

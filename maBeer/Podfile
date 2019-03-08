@@ -13,7 +13,8 @@ target 'maBeer' do
 	pod 'Firebase/Storage'
 	pod 'PureLayout'
 	pod 'RxSwift',    '~> 4.0'
-    	pod 'RxCocoa',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+    pod 'R.swift'
 
   target 'maBeerTests' do
     inherit! :search_paths

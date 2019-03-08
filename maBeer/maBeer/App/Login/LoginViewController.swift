@@ -12,7 +12,7 @@ import RxCocoa
 
 class LoginViewController: UIViewController {
     
-    var loginView: LoginView!
+    let loginView: LoginView = LoginView()
     let loginViewModel = LoginViewModel()
     let disposeBag = DisposeBag()
     
@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        loginView = LoginView()
         loginView.loginAction = pressedLogin
         view.addSubview(loginView)
         loginView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero)
@@ -30,8 +29,8 @@ class LoginViewController: UIViewController {
     }
     
     func setUpValidations(){
-        _ = loginView.tfPassword.rx.text.map{ $0 ?? ""}.bind(to: loginViewModel.password)
-        _ = loginView.tfEmail.rx.text.map{$0 ?? ""}.bind(to: loginViewModel.emailText)
+        _ = loginView.tfPassword.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.password)
+        _ = loginView.tfEmail.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.emailText)
         
         _ = loginViewModel.isValidPassword.bind(to: loginView.btLogin.rx.isEnabled)
         
