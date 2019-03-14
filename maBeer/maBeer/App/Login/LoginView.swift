@@ -62,7 +62,7 @@ class LoginView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .darkGrey
         addSubview(tfEmail)
         addSubview(tfPassword)
         addSubview(btLogin)
